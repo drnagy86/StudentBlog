@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Blog Posts{% endblock %}
+{% block content %}
+    {% for blogpost in object_list %}
+    <div class="card">
+        <div class="card-header">
+            <span class="font-weight-bold"><a href="{% url 'blogpost_detail' blogpost.pk %}">{{ blogpost.title }}</a></span>
+            <span class="text-muted">by {{ blogpost.author }} | {{ blogpost.created_on|date:'Y-m-d'}} 
+                {% if blogpost.created_on != blogpost.updated_on %}
+                 | {{ blogpost.updated_on|date:'Y-m-d' }}
+                {% endif %}
+            </span>                
+        </div>
+        <div class="card-body">
+            {{ blogpost.body }}
+        </div>
+        <div class="card-footer text-center text-muted">
+            <a href="{% url 'blogpost_edit' blogpost.pk %}">Edit</a> | <a href="{% url 'blogpost_delete' blogpost.pk %}">Delete</a>
+        </div>
+        <br />
+    </div>
+    {% endfor %}
+{% endblock content %}
