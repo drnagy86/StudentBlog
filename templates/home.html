@@ -3,13 +3,11 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-        {% if user.is_authenticated %}
-        Hi {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
-        {% else %}
-            <p>You are not loggin in.</p>
-            <a href="{% url 'login' %}">Log In</a>
-            <a href="{% url 'signup' %}">Sign Up</a>
-        {% endif %}
-
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Derrick's Student Dev Blog</h1>
+        <p class="lead">A professional reference site for Derrick Nagy.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'blogpost_list' %}" role="button">View Blog Posts</a>
+        
+    </div>
 {% endblock content %}
