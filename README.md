@@ -9,5 +9,9 @@
 * Take off sign up for new users
 * Add some sort of monitoring for comments
 * Deploy
+* Add markdown editing capabilities
+* Make the front end pretty
+* Add about page
+* Add resume page
 
 
