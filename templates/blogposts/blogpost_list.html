@@ -12,10 +12,19 @@
             </span>                
         </div>
         <div class="card-body">
-            {{ blogpost.body }}
+            <p>{{ blogpost.body }}</p>
+            
+            <a href="{% url 'blogpost_edit' blogpost.pk %}">Edit</a> | <a href="{% url 'blogpost_delete' blogpost.pk %}">Delete</a>
         </div>
         <div class="card-footer text-center text-muted">
-            <a href="{% url 'blogpost_edit' blogpost.pk %}">Edit</a> | <a href="{% url 'blogpost_delete' blogpost.pk %}">Delete</a>
+            {% for comment in blogpost.comments.all %}
+            <p>
+                <span class="font-weight-bold">
+                    {{ comment.author}}
+                </span>
+                {{ comment }}
+            </p>
+            {% endfor %}
         </div>
         <br />
     </div>
