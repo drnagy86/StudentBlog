@@ -5,9 +5,9 @@
     <div class="card">
         <div class="card-header">
             <span class="font-weight-bold"><a href="{% url 'blogpost_detail' blogpost.pk %}">{{ blogpost.title }}</a></span>
-            <span class="text-muted">by {{ blogpost.author }} | {{ blogpost.created_on|date:'Y-m-d'}} 
+            <span class="text-muted">by {{ blogpost.author }} | Created: {{ blogpost.created_on|date:'Y-m-d'}} 
                 {% if blogpost.created_on != blogpost.updated_on %}
-                 | {{ blogpost.updated_on|date:'Y-m-d' }}
+                 | Updated: {{ blogpost.updated_on|date:'Y-m-d' }}
                 {% endif %}
             </span>                
         </div>

@@ -6,7 +6,8 @@ from .views import (
     BlogPostDeleteView,
     BlogPostDetialView,
     BlogPostUpdateView,
-    BlogPostCreateView
+    BlogPostCreateView,
+    
 )
 
 urlpatterns = [

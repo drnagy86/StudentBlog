@@ -3,32 +3,38 @@
 {% block content %}
         <div class="article-entry">
             <h2>{{ object.title }}</h2>
-            <p>By {{ object.author }} | {{ object.created_on|date:'Y-m-d'}}</p>
+            <p>By {{ object.author }} | Created: {{ object.created_on|date:'Y-m-d'}} 
+                {% if object.updated_on != object.created_on %}
+                     | Updated: {{ object.updated_on|date:'Y-m-d'}}
+                {% endif %}
+
+            </p>
             <p>{{ object.body }}</p>
         </div>
         <a href="{% url 'blogpost_edit' blogpost.pk %}">Edit</a> | <a href="{% url 'blogpost_delete' blogpost.pk %}">Delete</a>
+       
 
-        <!-- <div class="article-entry">
-
+        <div class="article-entry">
+            <br />
             <h3>Comments</h3>
+            <p>Add a comment.</p>
 
-            {% if blogpost.comments.all != None %}
 
-                {% for comment in blogpost.comments.all %}
+            {% for comment in blogpost.comments.all %}
                 <p>
                     <span class="font-weight-bold">
                         {{ comment.author}}
                     </span>
                     {{ comment }}
                 </p>
-                {% endfor %}
-            {% else %}
-            <p>No comments</p>
-
-            {% endif %}
+            {% empty %}
+                <p>No comments</p>
+            {% endfor %}
 
 
-        </div> -->
+
+
+        </div>
 
 
 

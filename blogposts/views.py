@@ -2,8 +2,9 @@ from django.forms.models import modelform_factory
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.views.generic.base import View
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-from .models import BlogPost
+from .models import BlogPost, Comment
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
@@ -15,6 +16,7 @@ class BlogPostListView(ListView):
 class BlogPostDetialView(DetailView):
     model = BlogPost
     template_name = 'blogposts/blogpost_detail.html'
+    
 
 class BlogPostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = BlogPost
@@ -47,3 +49,24 @@ class BlogPostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+
+# # help from:
+# # https://stackoverflow.com/questions/20785987/combining-detailview-and-createview-in-django-1-6
+
+# #create the comment create view like normal
+# class CommentView(CreateView):
+#     model = Comment
+#     fields = ('author', 'comment')
+
+#     def get_success_url(self):
+#         return reverse_lazy('blogpost_detail', kwargs={'pk' : self.get_object(BlogPost.objects.all().pk)})
+
+# #combine the two views together
+# class BlogPostCommentView(View):
+#     def get(self, request, *args, **kwargs):
+#         view = BlogPostDetialView.as_view()
+#         return view(request, *args, **kwargs)
+
+#     def post(self, request, *args, **kwargs):
+#         view = CommentView.as_view()
+#         return view(request, *args, **kwargs)

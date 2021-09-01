@@ -19,5 +19,6 @@
 * Make the front end pretty
 * Add about page
 * Add resume page
+* Make bloglist appear by date (create a meta class)
 
 
