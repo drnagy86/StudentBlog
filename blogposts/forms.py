@@ -1,8 +1,18 @@
-from django.forms import ModelForm
+from django import forms
+from django import forms
+from django.forms import ModelForm, Form, widgets
+from django.views.generic.detail import DetailView
 
-from .models import Comment
+from .models import Comment, BlogPost
 
-class CommentForm(ModelForm):
-    class Meta:
+class CommentCreateForm(ModelForm):    
+    
+    class Meta(ModelForm):
         model = Comment
-        fields = ('author', 'comment')
+        fields = ('author', 'comment',)
+
+
+    
+
+
+

@@ -2,6 +2,7 @@ from django.contrib import auth
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.conf import settings
+from django.forms.widgets import HiddenInput
 from django.urls import reverse
 
 
@@ -31,7 +32,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments',
         )
-    comment = models.CharField(max_length=140)
+    comment = models.CharField(max_length=140, )
     author = models.CharField(max_length=100, default='Anonymous')
     created_on = models.DateTimeField(auto_now = True)
     approved = models.BooleanField(default=False)
