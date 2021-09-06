@@ -24,13 +24,6 @@ class BlogPostDetialView(DetailView):
     model = BlogPost
     template_name = 'blogposts/blogpost_detail.html'
 
-    # set up the detail view for blogposts to return the comment create form with its context data
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = CommentCreateForm()
-
-        return context
-
     
 
 class BlogPostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -63,12 +56,50 @@ class BlogPostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+class CommentCreateView(CreateView):
+    model = Comment
+    template_name = 'blogposts/blogpost_comments_new.html'
+    fields = ('blogpost','author', 'comment')
+    
+    def get_success_url(self):
+        return reverse('blogpost_detail', kwargs={'pk':self.object.pk})
+        
 
 
 
-class CommentDetailView(DetailView):
-    model = BlogPost    
 
+
+
+
+
+
+
+
+
+
+
+class BlogPostCommentDetialView(DetailView):
+    model = BlogPost
+    template_name = 'blogposts/blogpostcomment_detail.html'
+
+    # set up the detail view for blogposts to return the comment create form with its context data
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentCreateForm()
+
+        return context
+        
+    
+#combine the two views together
+class BlogPostCommentView(View):
+    def get(self, request, *args, **kwargs):
+        view = BlogPostCommentDetialView.as_view()
+        return view(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        view = CommentFormView.as_view()
+        # view = CommentFormCreateView.as_view()
+        return view(request, *args, **kwargs)
 
 class CommentFormView(SingleObjectMixin, FormView):
     template_name = 'blogposts/blogpost_detail.html'
@@ -77,26 +108,22 @@ class CommentFormView(SingleObjectMixin, FormView):
 
     def post(self, request: HttpRequest, *args: str, **kwargs) -> HttpResponse:
         self.object = self.get_object()
-        return super().post(request, *args, **kwargs)
+        return super(CommentFormView, self).post(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('blogpost_detail', kwargs={'pk':self.object.pk})
-
-    def form_valid(self, form):
+        
         
 
-        return super().form_valid(form)
+    def form_valid(self, form):
+        self.object = self.get_object()
 
-    
-#combine the two views together
-class BlogPostCommentView(View):
-    def get(self, request, *args, **kwargs):
-        view = BlogPostDetialView.as_view()
-        return view(request, *args, **kwargs)
+        self.object.save()
+        
 
-    def post(self, request, *args, **kwargs):
-        view = CommentFormView.as_view()
-        return view(request, *args, **kwargs)
+
+        return super(CommentFormView, self).form_valid(form)
+
     
     
 

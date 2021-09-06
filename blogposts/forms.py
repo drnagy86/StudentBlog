@@ -9,7 +9,11 @@ class CommentCreateForm(ModelForm):
     
     class Meta(ModelForm):
         model = Comment
-        fields = ('author', 'comment',)
+        fields = ('author', 'comment', )
+        
+
+
+        
 
 
     

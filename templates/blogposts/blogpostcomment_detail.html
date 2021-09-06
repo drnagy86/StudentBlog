@@ -17,8 +17,12 @@
 
         <div class="article-entry">
             <br />
-            <a href="{% url 'comment_new' %}">+Add Comment</a>
-
+            <h3>Comments</h3>
+            <p>Add a comment.</p>
+            <form action="" method="POST">{% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-success ml-2" type="submit">Add</button>
+            </form>
 
 
             {% for comment in blogpost.comments.all %}
