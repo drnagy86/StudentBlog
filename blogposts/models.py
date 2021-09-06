@@ -32,7 +32,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments',
         )
-    comment = models.CharField(max_length=140, )
+    comment = models.CharField(max_length=140)
     author = models.CharField(max_length=100, default='Anonymous')
     created_on = models.DateTimeField(auto_now = True)
     approved = models.BooleanField(default=False)
@@ -44,3 +44,8 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('blogpost_list')
+
+    def save(self, force_insert=True, *args, **kwargs):
+        
+
+        super().save(*args, force_insert=True, **kwargs)
