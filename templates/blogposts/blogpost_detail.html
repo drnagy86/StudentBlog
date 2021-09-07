@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load markdown_extras %}
 {% block title %}{{ object.title }}{% endblock %}
 {% block content %}
         <div class="article-entry">
@@ -16,7 +17,7 @@
                 {% endfor %}
                 
 
-            <p>{{ object.body }}</p>
+            <p>{{ blogpost.body | markdown | safe }}</p>
         </div>
         {% if user.is_authenticated %}
 
