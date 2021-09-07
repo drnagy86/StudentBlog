@@ -6,11 +6,12 @@
 {% block content %}
 
 <h3>Comments</h3>
-<p>Add a comment.</p>
+<p>Add a comment. Comment will not be viewable until Derrick approves.</p>
 <form action="" method="POST">{% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-success ml-2" type="submit">Add</button>
 </form>
+
 
     
 {% endblock content %}
