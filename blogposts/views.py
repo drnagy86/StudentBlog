@@ -62,7 +62,11 @@ class BlogPostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form: modelform_factory) -> HttpResponse:
         form.instance.author = self.request.user
+
+
         return super().form_valid(form)
+
+
 
 class CommentCreateView(CreateView):
     model = Comment

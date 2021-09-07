@@ -20,7 +20,7 @@ class BlogPost(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, related_name='blogposts')
 
     def __str__(self) -> str:
         return self.title
