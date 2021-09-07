@@ -5,6 +5,11 @@ from django.conf import settings
 from django.forms.widgets import HiddenInput
 from django.urls import reverse
 
+class Tag(models.Model):
+    tag = models.CharField(max_length=25, unique=True)
+
+    def __str__(self) -> str:
+        return self.tag
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=255, unique=True)
@@ -15,6 +20,7 @@ class BlogPost(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self) -> str:
         return self.title
@@ -22,8 +28,8 @@ class BlogPost(models.Model):
     def get_absolute_url(self):
         return reverse('blogpost_detail', args=[str(self.id)])
 
-class Comment(models.Model):
-    
+
+class Comment(models.Model):    
     class Meta:
         ordering = ('-created_on',)
 
