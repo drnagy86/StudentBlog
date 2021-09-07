@@ -18,7 +18,11 @@
 
             <p>{{ object.body }}</p>
         </div>
+        {% if user.is_authenticated %}
+
         <a href="{% url 'blogpost_edit' blogpost.pk %}">Edit</a> | <a href="{% url 'blogpost_delete' blogpost.pk %}">Delete</a>
+
+        {% endif %}
        
 
         <div class="article-entry">
@@ -28,12 +32,16 @@
 
 
             {% for comment in blogpost.comments.all %}
+
+                {% if comment.approved == True %}
                 <p>
                     <span class="font-weight-bold">
                         {{ comment.author}}
                     </span>
                     {{ comment }}
                 </p>
+                {% endif %}
+
             {% empty %}
                 <p>No comments</p>
             {% endfor %}

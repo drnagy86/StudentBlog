@@ -12,6 +12,10 @@ class Tag(models.Model):
         return self.tag
 
 class BlogPost(models.Model):
+    # dash means in descending order
+    class Meta:
+        ordering = ('-created_on',)
+
     title = models.CharField(max_length=255, unique=True)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True, unique=True)
@@ -36,6 +40,7 @@ class Comment(models.Model):
     blogpost = models.ForeignKey(
         BlogPost,
         on_delete=models.CASCADE,
+        
         related_name='comments',
         )
     comment = models.CharField(max_length=140)
@@ -54,4 +59,5 @@ class Comment(models.Model):
     def save(self, force_insert=True, *args, **kwargs):
         
 
-        super().save(*args, force_insert=True, **kwargs)
+        # super().save(*args, force_insert=True, **kwargs)
+        super().save(*args, **kwargs)

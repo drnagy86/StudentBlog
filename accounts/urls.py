@@ -3,5 +3,6 @@ from django.urls import path
 from .views import SignUpView
 
 urlpatterns = [
-    path('signup/', SignUpView.as_view(), name='signup'),
+    # unnecessary as I will be the only user
+    #path('signup/', SignUpView.as_view(), name='signup'),
 ]
