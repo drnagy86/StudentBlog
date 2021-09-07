@@ -1,7 +1,7 @@
 from django.http.request import HttpRequest
 from django.urls.base import reverse
 from django.views.generic.detail import SingleObjectMixin
-from blogposts.forms import CommentCreateForm
+from blogposts.forms import BlogPostCreateForm, CommentCreateForm
 from django import forms
 from django.forms.models import modelform_factory
 from django.http.response import HttpResponse
@@ -48,9 +48,17 @@ class BlogPostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return obj.author == self.request.user
 
 class BlogPostCreateView(LoginRequiredMixin, CreateView):
+    # model = BlogPost
+    # template_name = 'blogposts/blogpost_new.html'
+    # fields = ('title', 'body','tags' )
+
+    form_class = BlogPostCreateForm
     model = BlogPost
     template_name = 'blogposts/blogpost_new.html'
-    fields = ('title', 'body', )
+    
+    def get_success_url(self):
+        return reverse('blogpost_detail', kwargs={'pk':self.object.pk})
+    
 
     def form_valid(self, form: modelform_factory) -> HttpResponse:
         form.instance.author = self.request.user

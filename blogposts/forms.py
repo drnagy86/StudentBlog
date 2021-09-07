@@ -13,6 +13,11 @@ class CommentCreateForm(ModelForm):
         
 
 
+class BlogPostCreateForm(ModelForm):
+    class Meta(ModelForm):
+        model = BlogPost
+        fields = ('title', 'body','tags' )
+
         
 
 
