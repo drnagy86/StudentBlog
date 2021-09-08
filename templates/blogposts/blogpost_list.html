@@ -22,16 +22,16 @@
             {% endif %}
             
         </div>
-        <!-- <div class="card-footer text-center text-muted">
-            {% for comment in blogpost.comments.all %}
+        <div class="card-footer text-center text-muted">
             <p>
-                <span class="font-weight-bold">
-                    {{ comment.author}}
-                </span>
-                {{ comment }}
+                Tags : 
+                {% for tag in blogpost.tags.all %}
+                <!-- <a href="" class="btn btn-dark">{{ tag }}</a> -->
+                <span class="badge badge-dark">{{ tag }}</span>
+                   
+                {% endfor %}
             </p>
-            {% endfor %}
-        </div> -->
+        </div>
         <br />
     </div>
     {% endfor %}
