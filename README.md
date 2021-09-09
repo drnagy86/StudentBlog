@@ -14,19 +14,27 @@
   - [ ] send me a message that a new comment has appeared
   - [ ] Make a way to reply to comments(Do I really want this?)
 - [ ] Deploy
+  - [x] create static files
+  - [x] set all the config settings
+  - [x] walk-through Heroku guide
 - [x] Add markdown editing capabilities
+
+
 - [ ] Make the front end pretty
   -[x] Make the navigation bar link to pages]
   -[ ] Link to LinkedIn, GitHub
+  -[x] Set up css, images, js
+- [ ] Make home page features
+  - [ ] Home page lands to latest blog
+  - [ ] Pin a blog I like
+  - [ ] Short verison of the purpose of the site
+
 - [x] Add about page
 - [ ] Add resume page
 - [x] Make bloglist appear by date (create a meta class)
 - [ ] Listview for tags
 - [ ] Detailview for tags
 - [ ] Add Pagination to Blogpost listview
-- [ ] Make home page features
-  - [ ] Home page lands to latest blog
-  - [ ] Pin a blog I like
-  - [ ] Short verison of the purpose of the site
+
 
 
