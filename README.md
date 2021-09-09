@@ -1,5 +1,7 @@
 # StudentBlog
 *Source code for Derrick Nagy's student development blog*
+Deployed at [https://dnagy-dev-blog.herokuapp.com/](https://dnagy-dev-blog.herokuapp.com/)
+
 
 ## To do
 
@@ -13,7 +15,7 @@
   - [x] add boolean field to comments model for approved or not
   - [ ] send me a message that a new comment has appeared
   - [ ] Make a way to reply to comments(Do I really want this?)
-- [ ] Deploy
+- [x] Deploy
   - [x] create static files
   - [x] set all the config settings
   - [x] walk-through Heroku guide
@@ -22,8 +24,9 @@
 
 - [ ] Make the front end pretty
   -[x] Make the navigation bar link to pages]
-  -[ ] Link to LinkedIn, GitHub
+  -[ ] Link to LinkedIn, GitHub, HackerRank?
   -[x] Set up css, images, js
+  -[ ] Set up jQuery theme roller
 - [ ] Make home page features
   - [ ] Home page lands to latest blog
   - [ ] Pin a blog I like
@@ -35,6 +38,7 @@
 - [ ] Listview for tags
 - [ ] Detailview for tags
 - [ ] Add Pagination to Blogpost listview
+- [ ] Change author to display my name, not user name
 
 
 
