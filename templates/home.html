@@ -1,14 +1,19 @@
 
 
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Home{% endblock %}
 {% block content %}
     <br/>
+            <div class="myDisplay">
+            <span class="myDisplay-first-line">DERRICK</span>
+            <span class="myDisplay-second-line">NAGY</span>
+            <span class="myDisplay-third-line">IS READY TO CREATE</span>
+        </div>
     <div class="jumbotron">
-        <h1 class="display-4">Derrick's Student Dev Blog</h1>
         <p class="lead">A professional reference site for Derrick Nagy.</p>
         <a class="btn btn-primary btn-lg" href="{% url 'blogpost_list' %}" role="button">View Blog Posts</a>
         <a class="btn btn-primary btn-lg" href="{% url 'about' %}">About Me</a>
-        
     </div>
+    <div><img src="{% static 'images\StudentClass.PNG' %}" alt="Goofy code about a student class that implements a person class."></div>
 {% endblock content %}
