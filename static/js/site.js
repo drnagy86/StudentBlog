@@ -7,7 +7,14 @@ $("document").ready(function () {
     $(".myDisplay").css(
         {
             "font-family": "JetBrains Mono, monospace",
-            "font-size": "50px"
+
+        }
+    );
+
+    $(".btn").css(
+        {
+            "font-family": "JetBrains Mono, monospace",
+
         }
     );
 

@@ -2,18 +2,35 @@
 
 {% extends 'base.html' %}
 {% load static %}
+
+
 {% block title %}Home{% endblock %}
 {% block content %}
-    <br/>
-            <div class="myDisplay">
-            <span class="myDisplay-first-line">DERRICK</span>
-            <span class="myDisplay-second-line">NAGY</span>
-            <span class="myDisplay-third-line">IS READY TO CREATE</span>
+    <div class="jumbotron-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="myDisplay col">
+                    <span class="myDisplay-first-line row display-2">DERRICK</span>
+                    <span class="myDisplay-second-line row display-1">NAGY</span>
+                    <span class="myDisplay-third-line row display-4">IS READY TO CREATE</span>
+                </div>
+                <div class="col">
+                    <img class="img-fluid float-right" src="{% static 'images\StudentClass.PNG' %}" alt="Goofy code about a student class that implements a person class.">
+                </div>
+            </div>
         </div>
-    <div class="jumbotron">
-        <p class="lead">A professional reference site for Derrick Nagy.</p>
-        <a class="btn btn-primary btn-lg" href="{% url 'blogpost_list' %}" role="button">View Blog Posts</a>
-        <a class="btn btn-primary btn-lg" href="{% url 'about' %}">About Me</a>
+    <div class="container text-center">
+        <p class="lead">Hi, I am Derrick Nagy. I go to Kirkwood Community College where I study Computer Software Development. This is where I am documenting my growth as a developer.</p>
+        <a class="btn btn-dark btn-lg" href="{% url 'blogpost_list' %}" role="button">View Blog Posts</a>
+        <a class="btn btn-dark btn-lg" href="{% url 'about' %}">About Me</a>
     </div>
-    <div><img src="{% static 'images\StudentClass.PNG' %}" alt="Goofy code about a student class that implements a person class."></div>
+
+    </div>
+
+<br />
+<div>
+{% include "blogposts/blogpost_short_list.html" %}
+</div>
+
+
 {% endblock content %}

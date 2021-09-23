@@ -18,6 +18,9 @@ class BlogPostListView(ListView):
     model = BlogPost
     template_name = 'blogposts/blogpost_list.html'
 
+class BlogPostShortListView(ListView):
+    model = BlogPost
+    template_name = 'blogposts/blogpost_short_list.html'
 
 
 class BlogPostDetialView(DetailView):

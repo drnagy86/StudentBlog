@@ -29,8 +29,8 @@ Deployed at [https://dnagy-dev-blog.herokuapp.com/](https://dnagy-dev-blog.herok
   -[ ] Set up jQuery theme roller
 - [ ] Make home page features
   - [ ] Home page lands to latest blog
-  - [ ] Pin a blog I like
-  - [ ] Short verison of the purpose of the site
+  - [x] Pin a blog I like
+  - [x] Short verison of the purpose of the site
 
 - [x] Add about page
 - [ ] Add resume page
