@@ -1,5 +1,5 @@
 
 
-.random-test {
-    color: black;
+.myDisplay {
+    font-family: 'JetBrains Mono', monospace;
 }
