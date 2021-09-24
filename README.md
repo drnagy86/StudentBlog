@@ -23,22 +23,27 @@ Deployed at [https://dnagy-dev-blog.herokuapp.com/](https://dnagy-dev-blog.herok
 
 
 - [ ] Make the front end pretty
-  -[x] Make the navigation bar link to pages]
-  -[ ] Link to LinkedIn, GitHub, HackerRank?
-  -[x] Set up css, images, js
-  -[ ] Set up jQuery theme roller
+  - [x] Make the navigation bar link to pages
+  - [ ] Link to LinkedIn, GitHub, HackerRank?
+  - [x] Set up css, images, js
+  - [ ] Set up jQuery theme roller
+  - [x] Change font on tags
+  - [ ] Set up proper margins/padding instead of breaks
 - [ ] Make home page features
-  - [ ] Home page lands to latest blog
-  - [x] Pin a blog I like
+  - [ ] ~~Home page lands to latest blog~~
+  - [ ] Limit front page to 4 cards with last one being a link to all blogs
+  - [x] ~~Pin a blog I like~~
   - [x] Short verison of the purpose of the site
+  - 
 
 - [x] Add about page
 - [ ] Add resume page
 - [x] Make bloglist appear by date (create a meta class)
-- [ ] Listview for tags
-- [ ] Detailview for tags
+- [ ] ListView for tags
+- [ ] DetailView for tags
 - [ ] Add Pagination to Blogpost listview
 - [ ] Change author to display my name, not user name
+
 
 
 

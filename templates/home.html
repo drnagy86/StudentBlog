@@ -15,22 +15,25 @@
                     <span class="myDisplay-third-line row display-4">IS READY TO CREATE</span>
                 </div>
                 <div class="col">
+                    <br />
                     <img class="img-fluid float-right" src="{% static 'images\StudentClass.PNG' %}" alt="Goofy code about a student class that implements a person class.">
                 </div>
             </div>
         </div>
-    <div class="container text-center">
-        <p class="lead">Hi, I am Derrick Nagy. I go to Kirkwood Community College where I study Computer Software Development. This is where I am documenting my growth as a developer.</p>
-        <a class="btn btn-dark btn-lg" href="{% url 'blogpost_list' %}" role="button">View Blog Posts</a>
-        <a class="btn btn-dark btn-lg" href="{% url 'about' %}">About Me</a>
-    </div>
+        <div class="container text-center">
+            <br />
+            <p class="lead">Hi, I am Derrick Nagy. I go to Kirkwood Community College where I study Computer Software Development. This is where I am documenting my growth as a developer.</p>
+            {#        <a class="btn btn-dark btn-lg" href="{% url 'blogpost_list' %}" role="button">View Blog Posts</a>#}
+            <a class="btn btn-dark btn-lg" href="{% url 'about' %}">About Me</a>
+            <br />
+        </div>
 
     </div>
 
-<br />
-<div>
-{% include "blogposts/blogpost_short_list.html" %}
-</div>
+    <br />
+    <div>
+        {% include "blogposts/blogpost_short_list.html" %}
+    </div>
 
 
 {% endblock content %}

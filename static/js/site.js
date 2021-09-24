@@ -4,14 +4,7 @@ $("document").ready(function () {
 
     console.log("Hello, Visitor!");
 
-    $(".myDisplay").css(
-        {
-            "font-family": "JetBrains Mono, monospace",
-
-        }
-    );
-
-    $(".btn").css(
+    $(".myDisplay, .btn, .badge").css(
         {
             "font-family": "JetBrains Mono, monospace",
 
@@ -30,6 +23,8 @@ $("document").ready(function () {
             "color": backGround
         }
     );
+
+
 
 
 });
