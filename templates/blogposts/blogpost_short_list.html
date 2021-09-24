@@ -20,11 +20,6 @@
                     </div>
                     <div class="card-body">
                         <p>{{ blogpost.body | markdown | safe | truncatechars:150}}</p>
-                        {% if user.is_authenticated %}
-
-                            <a href="{% url 'blogpost_edit' blogpost.pk %}">Edit</a> | <a href="{% url 'blogpost_delete' blogpost.pk %}">Delete</a>
-
-                        {% endif %}
 
                     </div>
                     <div class="card-footer text-center text-muted">
