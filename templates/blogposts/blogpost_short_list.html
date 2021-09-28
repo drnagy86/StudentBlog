@@ -1,0 +1,48 @@
+
+{#{% extends 'base.html' %}#}
+{% load markdown_extras %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+
+        <div class="card-deck">
+
+            {% for blogpost in object_list|slice:4 %}
+
+                <div class="card col">
+                    <br />
+                    <div class="card-header">
+                        <span class="font-weight-bold"><a href="{% url 'blogpost_detail' blogpost.pk %}">{{ blogpost.title }}</a></span>
+                        <span class="text-muted">by {{ blogpost.author }} | Created: {{ blogpost.created_on|date:'Y-m-d'}}
+{#                            {% if blogpost.created_on != blogpost.updated_on %}#}
+{#                                | Updated: {{ blogpost.updated_on|date:'Y-m-d' }}#}
+{#                            {% endif %}#}
+            </span>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ blogpost.body | markdown | safe | truncatechars:150}}</p>
+
+                    </div>
+                    <div class="card-footer text-center text-muted">
+                        <p>
+                            Tags :
+                            {% for tag in blogpost.tags.all %}
+                                <!-- <a href="" class="btn btn-dark">{{ tag }}</a> -->
+                                <span class="badge badge-dark">{{ tag }}</span>
+
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <br />
+                </div>
+            {% endfor %}
+
+{#            <div class="container col">#}
+{#                <a class="btn btn-dark btn-lg" href="{% url 'blogpost_list' %}" role="button">View All Blog Posts</a>#}
+{#            </div>#}
+        </div>
+
+    </div>
+
+{% endblock %}
