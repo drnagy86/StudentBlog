@@ -24,11 +24,11 @@ Deployed at [https://dnagy-dev-blog.herokuapp.com/](https://dnagy-dev-blog.herok
 
 - Make the front end pretty
   - [x] Make the navigation bar link to pages
-  - [ ] Link to LinkedIn, GitHub, HackerRank?
+  - [ ] Link to LinkedIn, GitHub, Resume
   - [x] Set up css, images, js
   - [ ] Set up jQuery theme roller
   - [x] Change font on tags
-  - [ ] Set up proper margins/padding instead of breaks
+  - [x] Set up proper margins/padding instead of breaks
 - Make home page features
   - [ ] ~~Home page lands to latest blog~~
   - [x] Limit front page to 4 cards with last ~~one being a link to all blogs~~
