@@ -24,7 +24,7 @@ Deployed at [https://dnagy-dev-blog.herokuapp.com/](https://dnagy-dev-blog.herok
 
 - Make the front end pretty
   - [x] Make the navigation bar link to pages
-  - [ ] Link to LinkedIn, GitHub, Resume
+  - [x] Link to LinkedIn, GitHub, Resume
   - [x] Set up css, images, js
   - [ ] Set up jQuery theme roller
   - [x] Change font on tags
@@ -43,7 +43,7 @@ Deployed at [https://dnagy-dev-blog.herokuapp.com/](https://dnagy-dev-blog.herok
 - [ ] DetailView for tags
 - [ ] Add Pagination to Blogpost listview
 - [x] Change author to display my name, not user name
-- [ ] Links to GitHub, LinkedIn
+
 
 
 

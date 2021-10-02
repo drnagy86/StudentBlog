@@ -2,12 +2,12 @@
 
 $("document").ready(function () {
 
-    console.log("Hello, Visitor!");
+    console.log("Hello, Visitor! I hope you like my site.");
+
 
     $(".myDisplay, .btn, .badge").css(
         {
             "font-family": "JetBrains Mono, monospace",
-
         }
     );
 
@@ -23,6 +23,25 @@ $("document").ready(function () {
             "color": backGround
         }
     );
+
+    $('.grow-event').hover(
+        function (){
+            $(this).animate(
+                {
+                    fontSize: "40px"
+                },
+                "slow"
+            );//end animate
+        },
+        function (){
+            $(this).animate(
+                {
+                    fontSize: "20px"
+                },
+                "fast"
+            )
+        }
+    );//end hover
 
 
 
