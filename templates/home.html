@@ -7,16 +7,144 @@
 {% block title %}Home{% endblock %}
 {% block content %}
     <div class="jumbotron-fluid">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="myDisplay col">
-                    <span class="myDisplay-first-line row display-2">DERRICK</span>
-                    <span class="myDisplay-second-line row display-1">NAGY</span>
-                    <span class="myDisplay-third-line row display-4">IS READY TO CREATE</span>
-                </div>
-                <div class="col m-3">
-                    <img class="img-fluid float-right" src="{% static 'images\StudentClass.PNG' %}" alt="Goofy code about a student class that implements a person class.">
-                </div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="myDisplay col">
+            <span class="myDisplay-first-line row display-2">DERRICK</span>
+            <span class="myDisplay-second-line row display-1">NAGY</span>
+            <span class="myDisplay-third-line row display-4">IS READY TO CREATE</span>
+        </div>
+        <div class="col m-3">
+
+            <div style="width: 100%">
+                <svg xmlns="http://www.w3.org/2000/svg"  preserveAspectRatio="xMinYMin meet" viewBox="0 0 425 215"
+
+                     xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path id="line1" d="M 0 15 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line1"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                class Student:IPerson
+                            </textPath>
+                        </text>
+
+                        <path id="line2" d="M 0 30 H 180" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line2"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                {
+                            </textPath>
+                        </text>
+
+                        <path id="line3" d="M 10 45 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line3"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                public string Name {get;set;}
+                            </textPath>
+                        </text>
+
+                        <path id="line4" d="M 10 60 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line4"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                public string School {get;set;}
+                            </textPath>
+                        </text>
+
+                        <path id="line5" d="M 10 75 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line5"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                public string Study {get;set;}
+                            </textPath>
+                        </text>
+
+                        <path id="line6" d="M 10 105 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line6"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                public string IntroduceYourSelf()
+                            </textPath>
+                        </text>
+
+
+
+                        <path id="line7" d="M 10 120 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line7"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                {
+                            </textPath>
+                        </text>
+
+                        <path id="line8" d="M 20 135 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line8"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                return string.Format(
+                            </textPath>
+                        </text>
+
+                        <path id="line9" d="M 30 150 H 425" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line9"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                "Hi, I am {0}. I go to {1} where I study {2}.",
+                            </textPath>
+                        </text>
+
+                        <path id="line10" d="M 40 165 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line10"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                Name, School, Study);
+                            </textPath>
+                        </text>
+
+                        <path id="line11" d="M 10 180 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line11"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                }
+                            </textPath>
+                        </text>
+
+                        <path id="line12" d="M 0 195 H 325" fill="transparent" />
+                        <text font-family="monospace">
+                            <textPath
+                                    xlink:href="#line12"
+                                    method="stretch"
+                                    lengthAdjust="spacingAndGlyphs">
+                                }
+                            </textPath>
+                        </text>
+                    </g>
+                </svg>
+
             </div>
         </div>
         <div class="container-fluid text-center m-3">
@@ -42,13 +170,13 @@
                         <div class="col"></div>
                     </div>
                 </div>
-{#                <div class="">#}
-{#                    <a id="grow-event"  class="btn btn-dark btn-lg" href="{% url 'about' %}" data-toggle="tooltip" title="About Me"><i class="fas fa-address-card"></i></a>#}
-{#                    <a class="btn btn-dark btn-lg" data-toggle="tooltip" title="My Resume" href="https://drive.google.com/file/d/1hV2EO0dxZSySKUPdZFHIny_mFGrjeN52/view?usp=sharing"><i class="far fa-file"></i></a>#}
-{#                    <a class="btn btn-dark btn-lg" data-toggle="tooltip" title="My GitHub" href="https://github.com/drnagy86"><i class="fab fa-github"></i></a>#}
-{#                    <a class="btn btn-dark btn-lg" data-toggle="tooltip" title="My LinkedIn" href=""><i class="fab fa-linkedin-in"></i></a>#}
-{##}
-{#                </div>#}
+                {#                <div class="">#}
+                {#                    <a id="grow-event"  class="btn btn-dark btn-lg" href="{% url 'about' %}" data-toggle="tooltip" title="About Me"><i class="fas fa-address-card"></i></a>#}
+                {#                    <a class="btn btn-dark btn-lg" data-toggle="tooltip" title="My Resume" href="https://drive.google.com/file/d/1hV2EO0dxZSySKUPdZFHIny_mFGrjeN52/view?usp=sharing"><i class="far fa-file"></i></a>#}
+                {#                    <a class="btn btn-dark btn-lg" data-toggle="tooltip" title="My GitHub" href="https://github.com/drnagy86"><i class="fab fa-github"></i></a>#}
+                {#                    <a class="btn btn-dark btn-lg" data-toggle="tooltip" title="My LinkedIn" href=""><i class="fab fa-linkedin-in"></i></a>#}
+                {##}
+                {#                </div>#}
 
             </div>
         </div>
