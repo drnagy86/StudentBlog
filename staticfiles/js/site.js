@@ -2,7 +2,7 @@
 
 $("document").ready(function () {
 
-    console.log("Hello, Visitor! I hope you like my site.");
+    // console.log("Hello, Visitor! I hope you like my site.");
 
 
     $(".myDisplay, .btn, .badge").css(
@@ -43,22 +43,27 @@ $("document").ready(function () {
         }
     );//end hover
 
+    $("#java-button").click(
+        function (){
+            //$("#code-image").attr("src", "{% static 'images\\C#-Drawing.svg' %}");
+            console.log("Hello, Visitor! I hope you like my site.");
+
+        }
+    );// end java-button click
+
+
+
 
     let element = document.getElementsByClassName('markdownx');
 
     Object.keys(element).map(key =>
-
         element[key].addEventListener('markdownx.init', () => console.log("MarkdownX initialized."))
-
     );
 
     let element2 = document.getElementsByClassName('markdownx');
 
     Object.keys(element2).map(key =>
-
         element2[key].addEventListener('markdownx.update', event => console.log(event.detail))
-
     );
-
 
 });
