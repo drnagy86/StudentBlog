@@ -9,26 +9,13 @@ $("document").ready(function () {
         }
     );
 
-    function updateFont() {
-        $(".myDisplay, .btn, .badge").css(
-            {
-                "font-family": "JetBrains Mono, monospace",
-            }
-        );
-    }
-
-    let fontColor = $(".myDisplay-first-line").css("color");
-    let backGround = $(".myDisplay-first-line").css("background-color");
-    if (backGround == "rgba(0, 0, 0, 0)") {
-        backGround = "white";
-    }
-
-    $(".myDisplay-second-line").css(
-        {
-            "background-color": fontColor,
-            "color": backGround
-        }
-    );
+    // function updateFont() {
+    //     $(".myDisplay, .btn, .badge").css(
+    //         {
+    //             "font-family": "JetBrains Mono, monospace",
+    //         }
+    //     );
+    // }
 
     // $('.grow-event').hover(
     //     function (){
@@ -54,6 +41,8 @@ $("document").ready(function () {
     $("#python-image").hide();
     $("#javascript-image").hide();
 
+    const speed = 1000;
+
     function hideAllImages() {
         $("#java-image").hide();
         $("#python-image").hide();
@@ -64,7 +53,7 @@ $("document").ready(function () {
     $("#java-button").click(
         function () {
             hideAllImages();
-            $("#java-image").fadeIn(500);
+            $("#java-image").fadeIn(speed);
             $("#current-code").text("JAVA");
         }
     );// end java-button click
@@ -72,7 +61,7 @@ $("document").ready(function () {
     $("#python-button").click(
         function () {
             hideAllImages();
-            $("#python-image").fadeIn(500);
+            $("#python-image").fadeIn(speed);
             $("#current-code").text("PYTHON");
         }
     ); // end python-button click
@@ -80,7 +69,7 @@ $("document").ready(function () {
     $("#javascript-button").click(
         function () {
             hideAllImages();
-            $("#javascript-image").fadeIn(500);
+            $("#javascript-image").fadeIn(speed);
             $("#current-code").text("JAVASCRIPT");
         }
     ); // end javascript-button click
@@ -88,7 +77,7 @@ $("document").ready(function () {
     $("#c-sharp-button").click(
         function () {
             hideAllImages();
-            $("#c-sharp-image").fadeIn(500);
+            $("#c-sharp-image").fadeIn(speed);
             $("#current-code").text("C#");
         }
     ); // end c-sharp-button click
